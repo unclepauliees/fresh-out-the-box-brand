@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- HSA/FSA May Be Eligible: a document/receipt with an asterisk notation -->
+<!-- Never use this icon with language that promises reimbursement — always hedge ("may be eligible") -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#1E1510" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="HSA/FSA may be eligible">
+  <title>HSA/FSA — May Be Eligible</title>
+  <!-- Document shape with folded top-right corner -->
+  <path d="M 5 2 L 14 2 L 14 2 L 17 5 L 17 19 L 5 19 Z"/>
+  <path d="M 14 2 L 14 5 L 17 5"/>
+  <!-- Document lines suggesting receipt/form -->
+  <line x1="8" y1="9" x2="14" y2="9"/>
+  <line x1="8" y1="12" x2="14" y2="12"/>
+  <line x1="8" y1="15" x2="11" y2="15"/>
+  <!-- Asterisk (may be eligible notation) -->
+  <text x="19" y="22" font-family="'Manrope', sans-serif" font-size="8" font-weight="700" fill="#1E1510" stroke="none">*</text>
+</svg>

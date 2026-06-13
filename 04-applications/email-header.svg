@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Fresh Out The Box — Email Header -->
+<!-- 600px wide × 160px — standard email header dimensions -->
+<!-- Background: Espresso; Logotype: Crème; Tagline: Warm Stone -->
+<!-- Embed inline in email HTML or reference via img (note: fonts may not load via img tag — inline preferred) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 160" width="600" height="160" role="img" aria-label="Fresh Out The Box">
+  <title>Fresh Out The Box — Email Header</title>
+  <defs>
+    <style type="text/css">
+      @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&amp;family=Manrope:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&amp;display=swap');
+      .wm { font-family: 'Syne','Helvetica Neue',Arial,sans-serif; }
+      .wm-tag { font-family: 'Manrope', 'Helvetica Neue', Arial, sans-serif; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="160" fill="#1E1510"/>
+
+  <!-- Subtle cognac accent line at top -->
+  <rect x="0" y="0" width="600" height="2" fill="#B8713F" opacity="0.6"/>
+
+  <!-- Halo mark: center at (72, 80), radius 32 -->
+  <!-- Start (110°): x=72+32*cos(110°)=72-10.95=61.05  y=80-32*sin(110°)=80-30.07=49.93 -->
+  <!-- End (70°):   x=72+32*cos(70°)=72+10.95=82.95    y=80-32*sin(70°)=80-30.07=49.93 -->
+  <path
+    d="M 61.1 49.9 A 32 32 0 1 0 82.9 49.9"
+    fill="none"
+    stroke="#F5EDE3"
+    stroke-width="2.2"
+    stroke-linecap="round"
+  />
+
+  <!-- Vertical rule -->
+  <line x1="120" y1="42" x2="120" y2="118" stroke="#F5EDE3" stroke-width="0.5" opacity="0.2"/>
+
+  <!-- Wordmark -->
+  <text
+    x="138"
+    y="78"
+    class="wm"
+    font-size="22"
+    font-weight="600"
+    fill="#F5EDE3"
+    letter-spacing="3.5"
+    dominant-baseline="middle"
+  >FRESH OUT THE BOX</text>
+
+  <!-- Tagline -->
+  <text
+    x="139"
+    y="102"
+    class="wm-tag"
+    font-size="9"
+    font-weight="300"
+    fill="#8C7E74"
+    letter-spacing="1.8"
+    dominant-baseline="middle"
+  >RESTORING CONFIDENCE, ONE HAT AT A TIME</text>
+
+  <!-- Subtle bottom rule -->
+  <rect x="0" y="158" width="600" height="2" fill="#B8713F" opacity="0.25"/>
+</svg>

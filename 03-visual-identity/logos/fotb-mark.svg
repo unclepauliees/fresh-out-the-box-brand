@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Fresh Out The Box — Halo Mark (Full Color) -->
+<!-- The mark is a 320° arc opening at the crown: simultaneously a hat brim and a halo. -->
+<!-- Center: (50, 55), radius 38. Gap: 40° at top. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" role="img" aria-label="Fresh Out The Box halo mark">
+  <title>Fresh Out The Box — Halo Mark</title>
+  <!-- Main arc: from left-of-gap to right-of-gap, clockwise, large arc -->
+  <!-- Start (110°): x=37.0, y=19.3  |  End (70°): x=63.0, y=19.3 -->
+  <path
+    d="M 37.0 19.3 A 38 38 0 1 0 63.0 19.3"
+    fill="none"
+    stroke="#1E1510"
+    stroke-width="2.8"
+    stroke-linecap="round"
+  />
+  <!-- Clear-space indicator (invisible — for spec reference only; remove in production) -->
+  <!-- Minimum clear space: 10px on all sides of the 100×100 bounding box -->
+</svg>

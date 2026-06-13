@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Fresh Out The Box — Primary Logotype (One-Color Black) -->
+<!-- All elements rendered in #000000. Use on white or very light backgrounds. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 80" width="400" height="80" role="img" aria-label="Fresh Out The Box">
+  <title>Fresh Out The Box (Black)</title>
+  <defs>
+    <style type="text/css">
+      @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&amp;family=Manrope:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&amp;display=swap');
+      .wm { font-family: 'Syne','Helvetica Neue',Arial,sans-serif; }
+      .wm-sub { font-family: 'Manrope', 'Helvetica Neue', Arial, sans-serif; }
+    </style>
+  </defs>
+
+  <path
+    d="M 29.7 11.8 A 30 30 0 1 0 50.3 11.8"
+    fill="none"
+    stroke="#000000"
+    stroke-width="2.6"
+    stroke-linecap="round"
+  />
+
+  <line x1="88" y1="18" x2="88" y2="62" stroke="#000000" stroke-width="0.5" opacity="0.3"/>
+
+  <text x="104" y="38" class="wm" font-size="19" font-weight="600" fill="#000000" letter-spacing="3" dominant-baseline="middle">FRESH OUT THE BOX</text>
+  <text x="105" y="55" class="wm-sub" font-size="7.5" font-weight="300" fill="#000000" letter-spacing="1.5" dominant-baseline="middle" opacity="0.55">RESTORING CONFIDENCE, ONE HAT AT A TIME</text>
+</svg>

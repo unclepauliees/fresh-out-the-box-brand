@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Fresh Out The Box — Halo Mark (One-Color White / Reverse) -->
+<!-- Use on dark or high-saturation backgrounds. Espresso (#1E1510) background recommended. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" role="img" aria-label="Fresh Out The Box halo mark">
+  <title>Fresh Out The Box — Halo Mark (White Reverse)</title>
+  <!-- Background for preview — remove in production when placing on colored background -->
+  <rect width="100" height="100" fill="#1E1510"/>
+  <path
+    d="M 37.0 19.3 A 38 38 0 1 0 63.0 19.3"
+    fill="none"
+    stroke="#F5EDE3"
+    stroke-width="2.8"
+    stroke-linecap="round"
+  />
+</svg>

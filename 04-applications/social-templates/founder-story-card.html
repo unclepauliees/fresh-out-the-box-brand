@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FOTB — Founder Story Card Template (1:1)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:ital,wght@0,400;0,600;1,400&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --espresso:     #1E1510;
+    --creme:        #F5EDE3;
+    --cognac:       #B8713F;
+    --blush:        #D4A59E;
+    --parchment:    #E8DDD0;
+    --warm-stone:   #8C7E74;
+    --sage:         #7A8E6E;
+    --font-display: 'Syne','Helvetica Neue',Arial,sans-serif;
+    --font-body:    'Manrope', 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px;
+    background: var(--parchment);
+    font-family: var(--font-body);
+  }
+
+  /* 1080×1080 — founder story card, Blush ground for warmth */
+  .card {
+    width: min(600px, 90vw);
+    aspect-ratio: 1 / 1;
+    background: var(--blush);
+    padding: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Espresso bottom-left corner accent */
+  .card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 20%;
+    height: 20%;
+    background: var(--espresso);
+    opacity: 0.12;
+  }
+
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .founder-label {
+    font-family: var(--font-body);
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--espresso);
+    opacity: 0.65;
+  }
+
+  .halo-mark svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .story-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6% 0;
+  }
+
+  .founder-name {
+    font-family: var(--font-display);
+    font-size: clamp(13px, 2.5vw, 16px);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--espresso);
+    margin-bottom: 8px;
+    opacity: 0.7;
+  }
+
+  .story-pull {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(18px, 4vw, 24px);
+    line-height: 1.45;
+    color: var(--espresso);
+    margin-bottom: 16px;
+  }
+
+  .story-body-text {
+    font-family: var(--font-body);
+    font-size: clamp(12px, 2.2vw, 14px);
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--espresso);
+    opacity: 0.8;
+    max-width: 90%;
+  }
+
+  .card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .brand-name {
+    font-family: var(--font-display);
+    font-size: clamp(13px, 2.5vw, 15px);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--espresso);
+  }
+
+  .brand-handle {
+    font-family: var(--font-body);
+    font-size: 9px;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    color: var(--espresso);
+    opacity: 0.55;
+    margin-top: 3px;
+  }
+
+  /* Thin sage rule accent */
+  .story-rule {
+    width: 24px;
+    height: 2px;
+    background: var(--espresso);
+    opacity: 0.4;
+    margin-bottom: 12px;
+  }
+
+  .instructions {
+    background: var(--espresso);
+    color: var(--creme);
+    padding: 24px 28px;
+    margin-top: 24px;
+    max-width: min(600px, 90vw);
+    font-family: var(--font-body);
+    font-size: 12px;
+    line-height: 1.65;
+  }
+  .instructions h3 { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 10px; color: var(--cognac); font-weight: 500; }
+  .instructions p { margin-bottom: 8px; font-weight: 300; }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="card-top">
+    <span class="founder-label">Founder Story</span>
+    <div class="halo-mark">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" aria-label="Fresh Out The Box halo mark">
+        <path d="M 37.0 19.3 A 38 38 0 1 0 63.0 19.3" stroke="#1E1510" stroke-width="3.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="story-body">
+    <!-- EDIT CONTENT HERE — check against lexicon.md banned language list before publishing -->
+    <p class="founder-name">Zahara Acevedo — Founder</p>
+    <div class="story-rule"></div>
+    <p class="story-pull">She didn't find what she needed. So she built it.</p>
+    <p class="story-body-text">
+      During her own chemotherapy, Zahara saw a gap — between the headwear that looked clinical
+      and the wigs that cost more than most people could absorb mid-treatment.
+      Fresh Out The Box is what she made to close it.
+    </p>
+  </div>
+
+  <div class="card-bottom">
+    <div>
+      <p class="brand-name">Fresh Out The Box</p>
+      <p class="brand-handle">freshoutthebox.com</p>
+    </div>
+    <p class="brand-handle">@freshoutthebox</p>
+  </div>
+</div>
+
+<div class="instructions">
+  <h3>Template Instructions — Read Before Publishing</h3>
+  <p>Before publishing any founder story content, cross-check against the banned language list in <code>02-verbal-identity/lexicon.md</code>. Founder stories are high-risk for tone drift.</p>
+  <p>Edit the <code>.story-pull</code> pull quote and the <code>.story-body-text</code> paragraph for each variation. Keep the pull quote to one sentence.</p>
+  <p>Do not: describe Zahara as a "survivor," a "warrior," or use the word "journey." Do not linger on her treatment experience without pivoting to what she built. Do not use her story as emotional leverage to close a sale.</p>
+  <p>Background color alternative: Use Crème ground with Espresso text for a lighter tone version. Do not use Espresso ground on this template — founder story content needs warmth, not authority.</p>
+</div>
+
+</body>
+</html>

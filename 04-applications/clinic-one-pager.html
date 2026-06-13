@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fresh Out The Box — Clinic Referral One-Pager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:ital,wght@0,400;0,600;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* Screen styles */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --espresso:     #1E1510;
+    --creme:        #F5EDE3;
+    --cognac:       #B8713F;
+    --cognac-deep:  #8B5230;
+    --blush:        #D4A59E;
+    --sage:         #7A8E6E;
+    --parchment:    #E8DDD0;
+    --warm-stone:   #8C7E74;
+    --off-black:    #2C2420;
+    --font-display: 'Syne','Helvetica Neue',Arial,sans-serif;
+    --font-body:    'Manrope', 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background: #fff;
+    color: var(--off-black);
+    font-size: 10pt;
+    line-height: 1.55;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    width: 8.5in;
+    min-height: 11in;
+    margin: 0 auto;
+    background: var(--creme);
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ─── HEADER ─── */
+  .header {
+    background: var(--espresso);
+    padding: 24pt 36pt 20pt;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header-logo {
+    display: flex;
+    align-items: center;
+    gap: 14pt;
+  }
+
+  .header-logo svg {
+    width: 40pt;
+    height: 40pt;
+    flex-shrink: 0;
+  }
+
+  .header-wordmark {
+    color: var(--creme);
+  }
+
+  .header-wordmark h1 {
+    font-family: var(--font-display);
+    font-size: 15pt;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    line-height: 1;
+    margin-bottom: 3pt;
+  }
+
+  .header-wordmark p {
+    font-size: 7pt;
+    font-weight: 300;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--warm-stone);
+  }
+
+  .header-right {
+    text-align: right;
+    color: var(--creme);
+  }
+
+  .header-right p {
+    font-size: 8pt;
+    font-weight: 300;
+    color: rgba(245,237,227,0.6);
+    letter-spacing: 0.04em;
+    line-height: 1.6;
+  }
+
+  .cognac-rule {
+    height: 2pt;
+    background: var(--cognac);
+    opacity: 0.7;
+  }
+
+  /* ─── BODY ─── */
+  .body {
+    flex: 1;
+    padding: 24pt 36pt;
+    display: flex;
+    flex-direction: column;
+    gap: 20pt;
+  }
+
+  /* Intro statement */
+  .intro {
+    border-left: 3pt solid var(--cognac);
+    padding-left: 14pt;
+  }
+
+  .intro h2 {
+    font-family: var(--font-display);
+    font-size: 16pt;
+    font-weight: 600;
+    color: var(--espresso);
+    line-height: 1.2;
+    margin-bottom: 6pt;
+  }
+
+  .intro p {
+    font-size: 10pt;
+    font-weight: 300;
+    color: var(--off-black);
+    max-width: 5.5in;
+    line-height: 1.65;
+  }
+
+  /* Two-column layout */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24pt;
+  }
+
+  .section-card {
+    background: var(--parchment);
+    padding: 16pt;
+  }
+
+  .section-label {
+    font-size: 7.5pt;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--cognac);
+    margin-bottom: 8pt;
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: 12pt;
+    font-weight: 600;
+    color: var(--espresso);
+    margin-bottom: 8pt;
+  }
+
+  ul.feature-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5pt;
+  }
+
+  ul.feature-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8pt;
+    font-size: 9.5pt;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--off-black);
+  }
+
+  ul.feature-list li::before {
+    content: '—';
+    color: var(--cognac);
+    font-weight: 500;
+    flex-shrink: 0;
+    margin-top: 0;
+  }
+
+  /* Full-width product detail section */
+  .product-detail {
+    background: var(--espresso);
+    padding: 18pt 20pt;
+    color: var(--creme);
+  }
+
+  .product-detail .section-label {
+    color: var(--cognac);
+    margin-bottom: 10pt;
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16pt;
+  }
+
+  .product-item h4 {
+    font-family: var(--font-display);
+    font-size: 11pt;
+    font-weight: 600;
+    color: var(--creme);
+    margin-bottom: 4pt;
+  }
+
+  .product-item p {
+    font-size: 8.5pt;
+    font-weight: 300;
+    color: rgba(245,237,227,0.7);
+    line-height: 1.55;
+  }
+
+  .product-price {
+    font-size: 12pt;
+    font-weight: 600;
+    color: var(--cognac);
+    margin-top: 6pt;
+  }
+
+  /* Compliance / reimbursement box */
+  .compliance-box {
+    border: 1pt solid var(--cognac);
+    padding: 14pt 16pt;
+    background: transparent;
+  }
+
+  .compliance-box .section-label {
+    margin-bottom: 8pt;
+  }
+
+  .compliance-box p {
+    font-size: 8.5pt;
+    font-weight: 300;
+    line-height: 1.65;
+    color: var(--off-black);
+  }
+
+  .compliance-box strong {
+    font-weight: 500;
+    color: var(--espresso);
+  }
+
+  /* Referral / contact strip */
+  .referral-strip {
+    background: var(--parchment);
+    padding: 14pt 16pt;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16pt;
+  }
+
+  .referral-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4pt;
+  }
+
+  .referral-item .label {
+    font-size: 7pt;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--warm-stone);
+  }
+
+  .referral-item .value {
+    font-size: 10pt;
+    font-weight: 500;
+    color: var(--espresso);
+  }
+
+  .referral-item .sub {
+    font-size: 8pt;
+    font-weight: 300;
+    color: var(--warm-stone);
+    line-height: 1.5;
+  }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    background: var(--espresso);
+    padding: 12pt 36pt;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer p {
+    font-size: 7.5pt;
+    font-weight: 300;
+    color: rgba(245,237,227,0.45);
+    letter-spacing: 0.04em;
+  }
+
+  .footer .halo {
+    opacity: 0.35;
+  }
+
+  /* ─── PRINT STYLES ─── */
+  @media print {
+    @page { size: letter; margin: 0; }
+    body { font-size: 9pt; }
+    .page { width: 100%; min-height: 0; }
+    a { text-decoration: none; }
+  }
+
+  /* Screen container */
+  @media screen {
+    body { padding: 32px; background: #ccc; }
+    .page { box-shadow: 0 4px 32px rgba(0,0,0,0.18); }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-logo">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" aria-label="Fresh Out The Box halo mark">
+        <path d="M 37.0 19.3 A 38 38 0 1 0 63.0 19.3" stroke="#F5EDE3" stroke-width="3.5" stroke-linecap="round"/>
+      </svg>
+      <div class="header-wordmark">
+        <h1>FRESH OUT THE BOX</h1>
+        <p>Fashion-Forward Headwear with Integrated Remy Hair</p>
+      </div>
+    </div>
+    <div class="header-right">
+      <p>Referral Resource<br>For Patient Navigators &amp; Boutique Partners</p>
+    </div>
+  </header>
+  <div class="cognac-rule"></div>
+
+  <!-- BODY -->
+  <main class="body">
+
+    <!-- Intro -->
+    <div class="intro">
+      <h2>A put-on-and-go hat with integrated human hair.<br>Designed for sensitive scalps. Worn because it looks good.</h2>
+      <p>Fresh Out The Box is a fashion brand that makes hats with integrated Remy human hair inserts. The hat and hair are pre-assembled and ready to wear — no clips, no tape, no separate styling. The bamboo-cotton interior is designed with scalp sensitivity in mind. Adjustable fit accommodates treatment-related head circumference changes. Founded by Zahara Acevedo, a Stage IV breast cancer patient who needed a product like this and couldn't find one.</p>
+    </div>
+
+    <!-- Two-column: Product + Who It Serves -->
+    <div class="two-col">
+      <div class="section-card">
+        <p class="section-label">Product Architecture</p>
+        <p class="section-title">How It Works</p>
+        <ul class="feature-list">
+          <li>Remy human hair insert (the "halo") attaches to the hat shell</li>
+          <li>Ships pre-assembled — no setup required</li>
+          <li>Insert is removable and machine-washable</li>
+          <li>Available in eight shades, three textures: straight, wavy, coily (4A–4C)</li>
+          <li>Bamboo-cotton interior lining — hypoallergenic, temperature-regulating</li>
+          <li>Adjustable inner band — accommodates head circumference changes</li>
+          <li>No adhesives, no pressure points, no tight elastic</li>
+        </ul>
+      </div>
+
+      <div class="section-card">
+        <p class="section-label">Who It Serves</p>
+        <p class="section-title">Your Patients</p>
+        <ul class="feature-list">
+          <li>Women in active chemotherapy or radiation treatment with partial or full alopecia</li>
+          <li>Women in post-treatment regrowth who want a natural appearance</li>
+          <li>Women with alopecia areata or chronic hair loss seeking a simpler daily routine</li>
+          <li>Women who need adjustable fit as head shape changes during treatment</li>
+          <li>Patients who have found wigs too costly, too heavy, or too time-consuming</li>
+          <li>Gift buyers seeking a meaningful, fashion-forward option for a loved one</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Product detail / pricing -->
+    <div class="product-detail">
+      <p class="section-label">Products &amp; Pricing</p>
+      <div class="product-grid">
+        <div class="product-item">
+          <h4>The Founder Kit</h4>
+          <p>One hat shell, two Remy hair inserts (mix or match textures), bamboo-cotton liner. The complete put-on-and-go solution.</p>
+          <p class="product-price">$179</p>
+        </div>
+        <div class="product-item">
+          <h4>Individual Styles</h4>
+          <p>Single hat shell with one Remy hair insert included. Available in four silhouettes: Cedar, Sage, Espresso Fedora, Pearl Bucket.</p>
+          <p class="product-price">$89 – $129</p>
+        </div>
+        <div class="product-item">
+          <h4>Remy Hair Insert Only</h4>
+          <p>Replacement or additional halo. Compatible with any FOTB shell. Eight shades, three textures. Machine-washable.</p>
+          <p class="product-price">$49</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reimbursement / compliance -->
+    <div class="compliance-box">
+      <p class="section-label">HSA/FSA Reimbursement — For Patient Reference</p>
+      <p>
+        <strong>Some patients may be eligible for partial reimbursement through their Health Savings Account (HSA) or Flexible Spending Account (FSA).</strong>
+        Eligibility depends on individual plan terms and how the plan administrator classifies the product.
+        Fresh Out The Box is not a medical device and does not carry a formal medical indication. Eligibility is therefore plan-specific and cannot be guaranteed.
+      </p>
+      <p style="margin-top: 8pt;">
+        We recommend advising patients to verify eligibility directly with their plan administrator before purchase. We provide itemized receipts upon request to support reimbursement claims. Patients may also wish to request a Letter of Medical Necessity from their treating physician; some administrators accept this as supporting documentation.
+      </p>
+    </div>
+
+    <!-- Referral / contact -->
+    <div class="referral-strip">
+      <div class="referral-item">
+        <span class="label">Order Online</span>
+        <span class="value">freshoutthebox.com</span>
+        <span class="sub">Free shipping on orders over $99. Discreet exterior packaging available at checkout.</span>
+      </div>
+      <div class="referral-item">
+        <span class="label">For Wholesale / Boutique</span>
+        <span class="value">partners@freshoutthebox.com</span>
+        <span class="sub">Clinic and boutique wholesale pricing available. Minimum order quantities apply.</span>
+      </div>
+      <div class="referral-item">
+        <span class="label">Patient Support</span>
+        <span class="value">hello@freshoutthebox.com</span>
+        <span class="sub">Questions about fit, shade matching, or orders. Response within 1 business day.</span>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>Fresh Out The Box is a fashion brand, not a medical brand. Product claims have not been evaluated by the FDA. This document is for healthcare professional reference only.</p>
+    <svg class="halo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" width="28" height="28" aria-hidden="true">
+      <path d="M 37.0 19.3 A 38 38 0 1 0 63.0 19.3" stroke="#F5EDE3" stroke-width="3.5" stroke-linecap="round"/>
+    </svg>
+  </footer>
+
+</div>
+</body>
+</html>

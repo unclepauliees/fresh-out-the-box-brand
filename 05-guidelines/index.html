@@ -1,0 +1,1990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fresh Out The Box — Brand Guidelines</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Manrope:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════
+   TOKENS
+═══════════════════════════════════════════ */
+:root {
+  --espresso:      #1E1510;
+  --creme:         #F5EDE3;
+  --cognac:        #B8713F;
+  --cognac-deep:   #8B5230;
+  --blush:         #D4A59E;
+  --sage:          #7A8E6E;
+  --warm-sand:     #C9B49A;
+  --parchment:     #E8DDD0;
+  --off-black:     #2C2420;
+  --warm-stone:    #8C7E74;
+
+  --font-display:  'Syne', 'Helvetica Neue', Arial, sans-serif;
+  --font-body:     'Manrope', 'Helvetica Neue', Arial, sans-serif;
+
+  --transition:    0.22s ease;
+  --max-width:     1120px;
+}
+
+/* ═══════════════════════════════════════════
+   RESET + BASE
+═══════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--creme);
+  color: var(--off-black);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--cognac); color: var(--creme); }
+
+img, svg { display: block; max-width: 100%; }
+a { color: var(--cognac-deep); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ═══════════════════════════════════════════
+   LAYOUT HELPERS
+═══════════════════════════════════════════ */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.section--dark {
+  background: var(--espresso);
+  color: var(--creme);
+}
+
+.section--parchment {
+  background: var(--parchment);
+}
+
+.section--blush {
+  background: var(--blush);
+}
+
+.section-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--cognac);
+  margin-bottom: 14px;
+}
+
+.section--dark .section-label { color: var(--cognac); }
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--espresso);
+  margin-bottom: 20px;
+}
+
+.section--dark .section-title { color: var(--creme); }
+
+.section-intro {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--off-black);
+  max-width: 680px;
+  margin-bottom: 48px;
+}
+
+.section--dark .section-intro { color: rgba(245,237,227,0.75); }
+
+.rule {
+  width: 40px;
+  height: 2px;
+  background: var(--cognac);
+  margin-bottom: 20px;
+}
+
+/* ═══════════════════════════════════════════
+   SKIP LINK
+═══════════════════════════════════════════ */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  z-index: 9999;
+  background: var(--creme);
+  color: var(--espresso);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 18px;
+  text-decoration: none;
+  border: 2px solid var(--cognac);
+  outline: none;
+}
+.skip-link:focus { top: 8px; }
+
+/* ═══════════════════════════════════════════
+   FIXED NAVIGATION
+═══════════════════════════════════════════ */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: var(--espresso);
+  border-bottom: 1px solid rgba(245,237,227,0.08);
+  height: 56px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 40px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.nav-brand svg { width: 24px; height: 24px; }
+
+.nav-wordmark {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--creme);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(245,237,227,0.5);
+  transition: color var(--transition);
+  text-decoration: none;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a:hover { color: var(--creme); }
+
+.nav-brand:focus-visible,
+.nav-links a:focus-visible {
+  outline: 2px solid var(--cognac);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--cognac-deep);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ═══════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════ */
+.hero {
+  background: var(--espresso);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 56px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 35%;
+  height: 100%;
+  background: linear-gradient(135deg, transparent 40%, rgba(184,113,63,0.07) 100%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  padding: 80px 40px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.hero-text {}
+
+.hero-kicker {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--cognac);
+  margin-bottom: 20px;
+}
+
+.hero-headline {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 5.5vw, 68px);
+  font-weight: 600;
+  line-height: 1.0;
+  color: var(--creme);
+  margin-bottom: 28px;
+  letter-spacing: -0.01em;
+}
+
+.hero-tagline {
+  font-family: var(--font-body);
+  font-size: clamp(16px, 2vw, 20px);
+  font-style: italic;
+  font-weight: 400;
+  color: rgba(245,237,227,0.6);
+  margin-bottom: 36px;
+  line-height: 1.5;
+}
+
+.hero-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hero-meta p {
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  color: rgba(245,237,227,0.35);
+}
+
+.hero-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-mark svg {
+  width: min(320px, 100%);
+  height: auto;
+}
+
+/* Cognac accent line at very top */
+.cognac-topline {
+  position: absolute;
+  top: 56px; left: 0; right: 0;
+  height: 2px;
+  background: var(--cognac);
+  opacity: 0.5;
+}
+
+/* ═══════════════════════════════════════════
+   BRAND STORY
+═══════════════════════════════════════════ */
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.story-pull {
+  font-family: var(--font-body);
+  font-size: clamp(22px, 2.8vw, 32px);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--espresso);
+}
+
+.story-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.story-body p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.75;
+}
+
+.story-body p strong {
+  font-weight: 500;
+  color: var(--espresso);
+}
+
+/* ═══════════════════════════════════════════
+   BRAND PLATFORM
+═══════════════════════════════════════════ */
+.platform-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-bottom: 48px;
+}
+
+.platform-card {
+  background: var(--parchment);
+  padding: 32px 28px;
+}
+
+.platform-card:first-child { background: var(--espresso); }
+.platform-card:first-child .platform-card-title { color: var(--creme); }
+.platform-card:first-child .platform-card-body { color: rgba(245,237,227,0.65); }
+
+.platform-card-label {
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--cognac);
+  margin-bottom: 10px;
+}
+
+.platform-card-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--espresso);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.platform-card-body {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--off-black);
+}
+
+/* Values grid */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2px;
+}
+
+.value-card {
+  background: var(--creme);
+  padding: 24px 20px;
+  border: 1px solid var(--parchment);
+}
+
+.value-number {
+  font-family: var(--font-body);
+  font-size: 32px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--cognac);
+  opacity: 0.4;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.value-name {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--espresso);
+  margin-bottom: 8px;
+}
+
+.value-desc {
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--warm-stone);
+}
+
+/* Personality sliders */
+.sliders {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 700px;
+  margin-top: 48px;
+}
+
+.slider-row {
+  display: grid;
+  grid-template-columns: 140px 1fr 140px;
+  gap: 16px;
+  align-items: center;
+}
+
+.slider-label-left { font-size: 11px; font-weight: 300; color: var(--warm-stone); text-align: right; }
+.slider-label-right { font-size: 11px; font-weight: 300; color: var(--warm-stone); }
+
+.slider-track {
+  height: 2px;
+  background: var(--parchment);
+  position: relative;
+  border-radius: 1px;
+}
+
+.slider-fill {
+  height: 2px;
+  background: var(--cognac);
+  border-radius: 1px;
+  position: absolute;
+  left: 0;
+}
+
+.slider-dot {
+  width: 10px;
+  height: 10px;
+  background: var(--cognac);
+  border-radius: 50%;
+  position: absolute;
+  top: -4px;
+  transform: translateX(-50%);
+}
+
+/* ═══════════════════════════════════════════
+   VOICE & TONE
+═══════════════════════════════════════════ */
+.voice-principles {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  margin-bottom: 64px;
+}
+
+.voice-card {
+  background: var(--espresso);
+  padding: 28px 24px;
+}
+
+.voice-card-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--creme);
+  margin-bottom: 10px;
+}
+
+.voice-card-desc {
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(245,237,227,0.6);
+  line-height: 1.65;
+  margin-bottom: 14px;
+}
+
+.voice-example {
+  background: rgba(245,237,227,0.07);
+  padding: 12px;
+  font-size: 11px;
+  font-style: italic;
+  line-height: 1.6;
+  color: rgba(245,237,227,0.5);
+}
+
+.voice-example em { font-style: normal; color: var(--cognac); }
+
+/* Do / Don't pairs */
+.do-dont-set {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 48px;
+}
+
+.do-dont-set h3 {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--warm-stone);
+  margin-bottom: 12px;
+}
+
+.do-dont-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-bottom: 2px;
+}
+
+.dont-side, .do-side {
+  padding: 20px 24px;
+  position: relative;
+}
+
+.dont-side {
+  background: var(--parchment);
+  border-left: 3px solid rgba(170,60,40,0.35);
+}
+
+.do-side {
+  background: var(--parchment);
+  border-left: 3px solid var(--sage);
+}
+
+.pair-tag {
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.dont-side .pair-tag { color: rgba(170,60,40,0.7); }
+.do-side .pair-tag { color: var(--sage); }
+
+.pair-copy {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--off-black);
+}
+
+.dont-side .pair-copy { opacity: 0.7; }
+
+.pair-note {
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--warm-stone);
+  margin-top: 8px;
+  font-style: italic;
+}
+
+/* Context tone rows */
+.tone-contexts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  margin-top: 48px;
+}
+
+.tone-context-card {
+  background: var(--creme);
+  border: 1px solid var(--parchment);
+  padding: 24px;
+}
+
+.context-name {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cognac);
+  margin-bottom: 8px;
+}
+
+.context-tone {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--espresso);
+  margin-bottom: 10px;
+}
+
+.context-example {
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--off-black);
+  padding-left: 12px;
+  border-left: 1px solid var(--warm-sand);
+  font-style: italic;
+}
+
+/* ═══════════════════════════════════════════
+   VISUAL SYSTEM — LOGOS
+═══════════════════════════════════════════ */
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.logo-cell {
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.logo-cell--dark { background: var(--espresso); }
+.logo-cell--light { background: var(--creme); border: 1px solid var(--parchment); }
+.logo-cell--mid { background: var(--parchment); }
+
+.logo-cell-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-height: 100px;
+}
+
+.logo-cell-label {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.logo-cell--dark .logo-cell-label { color: rgba(245,237,227,0.4); }
+.logo-cell--light .logo-cell-label { color: var(--warm-stone); }
+.logo-cell--mid .logo-cell-label { color: var(--warm-stone); }
+
+/* Clear space rule callout */
+.clearspace-rule {
+  background: var(--parchment);
+  border: 1px solid var(--warm-sand);
+  padding: 24px 28px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+  align-items: center;
+  margin-top: 32px;
+}
+
+.clearspace-rule svg { width: 64px; height: 64px; flex-shrink: 0; }
+
+.clearspace-body h4 {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--espresso);
+  margin-bottom: 6px;
+}
+
+.clearspace-body p {
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--warm-stone);
+  line-height: 1.6;
+}
+
+/* ═══════════════════════════════════════════
+   VISUAL SYSTEM — COLOR
+═══════════════════════════════════════════ */
+.color-swatches {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-bottom: 40px;
+}
+
+.swatch {
+  display: flex;
+  flex-direction: column;
+}
+
+.swatch-block {
+  height: 120px;
+}
+
+.swatch-info {
+  padding: 12px 14px;
+  background: var(--creme);
+}
+
+.swatch-name {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--espresso);
+  margin-bottom: 2px;
+}
+
+.swatch-hex {
+  font-size: 10px;
+  font-weight: 300;
+  color: var(--warm-stone);
+  font-family: monospace;
+}
+
+.swatch-note {
+  font-size: 9px;
+  font-weight: 300;
+  color: var(--warm-stone);
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+/* Contrast matrix */
+.contrast-matrix {
+  background: var(--espresso);
+  padding: 32px;
+  overflow-x: auto;
+}
+
+.contrast-matrix h3 {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cognac);
+  margin-bottom: 20px;
+}
+
+.matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+}
+
+.matrix-table th {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(245,237,227,0.4);
+  text-align: left;
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(245,237,227,0.08);
+}
+
+.matrix-table td {
+  padding: 10px 12px;
+  color: rgba(245,237,227,0.75);
+  font-weight: 300;
+  border-bottom: 1px solid rgba(245,237,227,0.05);
+  vertical-align: middle;
+}
+
+.ratio-pass { color: var(--sage); font-weight: 500; }
+.ratio-warn { color: var(--cognac); font-weight: 500; }
+.ratio-fail { color: rgba(200,100,80,0.8); font-weight: 500; }
+
+.swatch-pill {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+/* ═══════════════════════════════════════════
+   VISUAL SYSTEM — TYPOGRAPHY
+═══════════════════════════════════════════ */
+.type-specimens {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.type-specimen {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 32px;
+  align-items: baseline;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--parchment);
+}
+
+.type-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-top: 2px;
+}
+
+.type-level { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cognac); }
+.type-spec  { font-size: 10px; font-weight: 300; color: var(--warm-stone); line-height: 1.5; }
+
+/* ═══════════════════════════════════════════
+   PHOTOGRAPHY DIRECTION
+═══════════════════════════════════════════ */
+.photo-briefs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+}
+
+.photo-brief-card {
+  background: var(--parchment);
+  padding: 28px 24px;
+}
+
+.brief-number {
+  font-family: var(--font-body);
+  font-size: 40px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--cognac);
+  opacity: 0.3;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.brief-title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--espresso);
+  margin-bottom: 6px;
+}
+
+.brief-subtitle {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--warm-stone);
+  margin-bottom: 14px;
+}
+
+.brief-desc {
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--off-black);
+}
+
+.rep-requirement {
+  background: var(--espresso);
+  color: var(--creme);
+  padding: 32px;
+  margin-bottom: 32px;
+}
+
+.rep-requirement h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--creme);
+  margin-bottom: 16px;
+}
+
+.rep-requirement p {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: rgba(245,237,227,0.75);
+  max-width: 760px;
+  margin-bottom: 12px;
+}
+
+.rep-items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  margin-top: 20px;
+}
+
+.rep-item {
+  background: rgba(245,237,227,0.06);
+  padding: 16px;
+}
+
+.rep-item-label {
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--cognac);
+  margin-bottom: 6px;
+}
+
+.rep-item-desc {
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.55;
+  color: rgba(245,237,227,0.65);
+}
+
+/* ═══════════════════════════════════════════
+   SENSITIVITY & COMPLIANCE
+═══════════════════════════════════════════ */
+.compliance-section {
+  background: var(--off-black);
+  color: var(--creme);
+}
+
+.compliance-header {
+  background: var(--espresso);
+  padding: 40px;
+  border-bottom: 2px solid var(--cognac);
+}
+
+.compliance-header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 600;
+  color: var(--creme);
+  margin-bottom: 12px;
+}
+
+.compliance-header p {
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(245,237,227,0.65);
+  max-width: 680px;
+  line-height: 1.7;
+}
+
+.compliance-body {
+  padding: 48px 40px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.compliance-block {
+  background: rgba(245,237,227,0.04);
+  border: 1px solid rgba(245,237,227,0.1);
+  padding: 24px;
+}
+
+.compliance-block h3 {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cognac);
+  margin-bottom: 14px;
+}
+
+.compliance-block ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.compliance-block ul li {
+  display: flex;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: rgba(245,237,227,0.7);
+}
+
+.compliance-block ul li::before {
+  content: '—';
+  color: var(--cognac);
+  flex-shrink: 0;
+}
+
+.compliance-block p {
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(245,237,227,0.7);
+  margin-bottom: 10px;
+}
+
+.compliance-block .note {
+  font-size: 11px;
+  color: rgba(245,237,227,0.4);
+  line-height: 1.6;
+  border-top: 1px solid rgba(245,237,227,0.1);
+  padding-top: 12px;
+  margin-top: 8px;
+}
+
+/* ═══════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════ */
+.footer {
+  background: var(--espresso);
+  padding: 48px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+  border-top: 2px solid rgba(184,113,63,0.3);
+}
+
+.footer-brand { display: flex; flex-direction: column; gap: 10px; }
+
+.footer-brand svg { width: 32px; height: 32px; }
+
+.footer-wordmark {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--creme);
+}
+
+.footer-tagline {
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  color: var(--warm-stone);
+}
+
+.footer-index { text-align: right; }
+
+.footer-index h4 {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cognac);
+  margin-bottom: 10px;
+}
+
+.footer-index ul { list-style: none; }
+
+.footer-index ul li {
+  font-size: 11px;
+  font-weight: 300;
+  color: rgba(245,237,227,0.4);
+  line-height: 1.8;
+}
+
+.footer-index ul li a {
+  color: rgba(245,237,227,0.4);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.footer-index ul li a:hover { color: var(--creme); }
+
+/* ═══════════════════════════════════════════
+   UTILITIES
+═══════════════════════════════════════════ */
+.mt-8  { margin-top: 8px; }
+.mt-16 { margin-top: 16px; }
+.mt-24 { margin-top: 24px; }
+.mt-32 { margin-top: 32px; }
+.mt-48 { margin-top: 48px; }
+.mt-64 { margin-top: 64px; }
+
+.text-cognac    { color: var(--cognac); }
+.text-stone     { color: var(--warm-stone); }
+.text-creme     { color: var(--creme); }
+.italic         { font-style: italic; }
+.font-display   { font-family: var(--font-display); }
+
+code {
+  font-family: 'SFMono-Regular', Consolas, monospace;
+  font-size: 0.875em;
+  background: rgba(30,21,16,0.07);
+  padding: 1px 5px;
+  border-radius: 2px;
+  color: var(--cognac-deep);
+}
+
+.section--dark code {
+  background: rgba(245,237,227,0.1);
+  color: var(--cognac);
+}
+</style>
+</head>
+<body>
+
+<a href="#hero" class="skip-link">Skip to main content</a>
+
+<!-- ═══════════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════════ -->
+<nav class="nav" aria-label="Brand guidelines navigation">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-brand" aria-label="Fresh Out The Box">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true">
+        <path d="M 37.0 19.3 A 38 38 0 1 0 63.0 19.3" stroke="#F5EDE3" stroke-width="3.8" stroke-linecap="round"/>
+      </svg>
+      <span class="nav-wordmark">FRESH OUT THE BOX</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="#story">Story</a></li>
+      <li><a href="#platform">Platform</a></li>
+      <li><a href="#voice">Voice</a></li>
+      <li><a href="#visual">Visual</a></li>
+      <li><a href="#photography">Photography</a></li>
+      <li><a href="#compliance">Compliance</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════ -->
+<section id="hero" class="hero" tabindex="-1">
+  <div class="cognac-topline" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <p class="hero-kicker">Brand Guidelines — Version 1.0</p>
+      <h1 class="hero-headline">Fresh Out<br>The Box</h1>
+      <p class="hero-tagline">Restoring confidence,<br>one hat at a time.</p>
+      <div class="hero-meta">
+        <p>Fashion-forward headwear with integrated Remy hair.</p>
+        <p>Founded by Zahara Acevedo.</p>
+        <p>For women experiencing medical hair loss.</p>
+      </div>
+    </div>
+    <div class="hero-mark" aria-hidden="true">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" fill="none">
+        <path d="M 74.0 38.6 A 76 76 0 1 0 126.0 38.6" stroke="#F5EDE3" stroke-width="3.5" stroke-linecap="round" opacity="0.9"/>
+        <path d="M 74.0 38.6 A 76 76 0 1 0 126.0 38.6" stroke="#B8713F" stroke-width="1" stroke-linecap="round" opacity="0.3"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     BRAND STORY
+═══════════════════════════════════════════ -->
+<section id="story" class="section">
+  <div class="container">
+    <p class="section-label">01 — Brand Story</p>
+    <div class="story-grid">
+      <div>
+        <div class="rule"></div>
+        <p class="story-pull">She didn't find what she needed. So she built it.</p>
+      </div>
+      <div class="story-body">
+        <p>During her Stage IV breast cancer treatment, Zahara Acevedo encountered a gap that no one had closed. Affordable wigs looked wrong. Quality wigs cost what most people on treatment couldn't absorb. Medical headwear looked like it came from a hospital supply closet — because it did. None of these options treated the person wearing them as a woman with taste.</p>
+        <p><strong>Fresh Out The Box is the product she made to close that gap.</strong> A hat with an integrated Remy human hair halo — pre-assembled, adjustable, bamboo-lined, and ready in ten seconds. Fashion-forward enough for everyday life. Gentle enough for treatment. Simple enough for the mornings when energy is short.</p>
+        <p>The brand name is the product's defining promise: the moment you open this box, you're fresh out of it — ready. The box opening is the brand's emotional heart. Every design decision, from the product architecture to the unboxing experience to the copy on the insert card, is built to honor that moment.</p>
+        <p class="text-stone"><em>Note on founder story usage: Zahara's experience is the brand's origin. Use it to explain what was built and why — never as trauma marketing or emotional leverage. Acknowledge the history; pivot to what was made.</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     BRAND PLATFORM
+═══════════════════════════════════════════ -->
+<section id="platform" class="section section--parchment">
+  <div class="container">
+    <p class="section-label">02 — Brand Platform</p>
+    <h2 class="section-title">Purpose, Promise &amp; Values</h2>
+
+    <div class="platform-grid">
+      <div class="platform-card">
+        <p class="platform-card-label">Purpose</p>
+        <p class="platform-card-title">Why We Exist</p>
+        <p class="platform-card-body">To make the days when getting dressed feels impossible feel like themselves again.</p>
+      </div>
+      <div class="platform-card">
+        <p class="platform-card-label">Brand Promise</p>
+        <p class="platform-card-title">Feel Like Yourself Again</p>
+        <p class="platform-card-body">Not a boast about the product. A promise about the experience of putting it on. The product delivers on it; the copy points toward it.</p>
+      </div>
+      <div class="platform-card">
+        <p class="platform-card-label">Positioning</p>
+        <p class="platform-card-title">The Fashion-Forward Middle</p>
+        <p class="platform-card-body">Between clinical headwear (~$40–95) and premium wigs ($400–530+), at a hero kit price of $179. Not a compromise — a category.</p>
+      </div>
+    </div>
+
+    <div class="mt-48">
+      <p class="section-label">Brand Values</p>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-number">01</div>
+          <p class="value-name">Dignity, Not Drama</p>
+          <p class="value-desc">Acknowledge the real without making it heavy. Treat every customer as a fully capable adult.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-number">02</div>
+          <p class="value-name">Fashion Is Not Frivolous</p>
+          <p class="value-desc">Style is self-authorship. Choosing a beautiful hat is not vanity — and we take it seriously.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-number">03</div>
+          <p class="value-name">Radical Simplicity</p>
+          <p class="value-desc">Ten seconds. One piece. Natural results. The product gives back time and mental bandwidth.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-number">04</div>
+          <p class="value-name">Honest Representation</p>
+          <p class="value-desc">Full skin-tone range, all hair textures including coily/curly, real ages — structurally, every cycle.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-number">05</div>
+          <p class="value-name">Accessible Fashion</p>
+          <p class="value-desc">Fashion-grade quality at an attainable price. The white space between cheap and premium is intentional.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-48">
+      <p class="section-label">Brand Personality</p>
+      <p class="mt-16 text-stone" style="font-size:13px;font-weight:300;max-width:560px;">Read as: a fashion-literate friend who has been through something and came out the other side with her sense of humor intact. Not a brand talking down to a patient. Not a brand performing cheerfulness.</p>
+      <div class="sliders">
+        <div class="slider-row">
+          <span class="slider-label-left">Clinical</span>
+          <div class="slider-track">
+            <div class="slider-fill" style="width:87%;"></div>
+            <div class="slider-dot" style="left:87%;"></div>
+          </div>
+          <span class="slider-label-right">Editorial — <strong>9</strong>/10</span>
+        </div>
+        <div class="slider-row">
+          <span class="slider-label-left">Cool / Professional</span>
+          <div class="slider-track">
+            <div class="slider-fill" style="width:78%;"></div>
+            <div class="slider-dot" style="left:78%;"></div>
+          </div>
+          <span class="slider-label-right">Warm / Personal — <strong>8</strong>/10</span>
+        </div>
+        <div class="slider-row">
+          <span class="slider-label-left">Soft / Deferent</span>
+          <div class="slider-track">
+            <div class="slider-fill" style="width:60%;"></div>
+            <div class="slider-dot" style="left:60%;"></div>
+          </div>
+          <span class="slider-label-right">Direct / Candid — <strong>6</strong>/10</span>
+        </div>
+        <div class="slider-row">
+          <span class="slider-label-left">Aspirational Luxury</span>
+          <div class="slider-track">
+            <div class="slider-fill" style="width:40%;"></div>
+            <div class="slider-dot" style="left:40%;"></div>
+          </div>
+          <span class="slider-label-right">Attainable / Real — <strong>4</strong>/10</span>
+        </div>
+        <div class="slider-row">
+          <span class="slider-label-left">Heavy / Earnest</span>
+          <div class="slider-track">
+            <div class="slider-fill" style="width:55%;"></div>
+            <div class="slider-dot" style="left:55%;"></div>
+          </div>
+          <span class="slider-label-right">Light / Knowing — <strong>5.5</strong>/10</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     VOICE & TONE
+═══════════════════════════════════════════ -->
+<section id="voice" class="section section--dark">
+  <div class="container">
+    <p class="section-label">03 — Voice &amp; Tone</p>
+    <h2 class="section-title">How We Sound</h2>
+    <p class="section-intro">Voice is what doesn't change. Tone flexes by context. Four qualities are always present.</p>
+
+    <div class="voice-principles">
+      <div class="voice-card">
+        <p class="voice-card-name">Warm</p>
+        <p class="voice-card-desc">Genuine care from lived experience, not from a handbook. Specific, never performed.</p>
+        <div class="voice-example"><em>Sounds like:</em> "The lining is bamboo because that's what doesn't irritate a sensitive scalp."<br>Not: "We care deeply about your comfort journey."</div>
+      </div>
+      <div class="voice-card">
+        <p class="voice-card-name">Direct</p>
+        <p class="voice-card-desc">Say what we mean. No softening into vagueness. Directness is a form of respect.</p>
+        <div class="voice-example"><em>Sounds like:</em> "It takes ten seconds."<br>Not: "It's designed to be incredibly easy and quick to put on, making your morning so much simpler."</div>
+      </div>
+      <div class="voice-card">
+        <p class="voice-card-name">Candid</p>
+        <p class="voice-card-desc">Name the real situation when useful — then move on. Don't tiptoe; don't perform strength.</p>
+        <div class="voice-example"><em>Sounds like:</em> "Hair loss is disorienting. This is the hat that makes getting dressed work anyway."<br>Not: "We know you're going through so much right now."</div>
+      </div>
+      <div class="voice-card">
+        <p class="voice-card-name">Fashion-Literate</p>
+        <p class="voice-card-desc">Specific, a little proprietary, like a stylish friend who wants you to know about a find.</p>
+        <div class="voice-example"><em>Sounds like:</em> "The cognac brim is the one that works with everything."<br>Not: "Versatile warm-toned headwear perfect for all occasions."</div>
+      </div>
+    </div>
+
+    <!-- Do / Don't pairs -->
+    <p class="section-label mt-64">Do / Don't — Side by Side</p>
+    <p style="font-size:13px;font-weight:300;color:rgba(245,237,227,0.55);margin-bottom:32px;max-width:560px;">These are the highest-stakes tone decisions in this category. Getting them wrong is not just off-brand — it actively harms the reader.</p>
+
+    <div class="do-dont-set">
+      <h3 class="mt-16">Product Page — First Paragraph</h3>
+      <div class="do-dont-pair">
+        <div class="dont-side">
+          <p class="pair-tag">✕ Don't</p>
+          <p class="pair-copy">"For women going through the difficult journey of hair loss, The Cedar is a beautiful headwear solution that lets you feel like your best self even on hard days."</p>
+          <p class="pair-note">Diagnoses before describing. "Journey," "hard days," "best self" — all banned register. Centers the condition, not the product.</p>
+        </div>
+        <div class="do-side">
+          <p class="pair-tag">✓ Do</p>
+          <p class="pair-copy">"A structured brim with a camel interior and a deep brunette human-hair halo. The kind of hat that gets compliments in line at the coffee shop."</p>
+          <p class="pair-note">Fashion-first. Specific detail. A scene, not a condition. The product is just a great hat.</p>
+        </div>
+      </div>
+
+      <div class="do-dont-pair">
+        <div class="dont-side">
+          <p class="pair-tag">✕ Don't</p>
+          <p class="pair-copy">"You are so brave, and you deserve to feel beautiful. This hat is our way of showing you that you're not alone in your battle."</p>
+          <p class="pair-note">"Brave," "deserve," "battle," "not alone" — four banned words in two sentences. Also positions the product as charity rather than commerce.</p>
+        </div>
+        <div class="do-side">
+          <p class="pair-tag">✓ Do</p>
+          <p class="pair-copy">"Real hair. Real hat. Ready when you are — which is whenever."</p>
+          <p class="pair-note">Respects her autonomy. States the product truth. Gives her the timing, not us.</p>
+        </div>
+      </div>
+
+      <div class="do-dont-pair">
+        <div class="dont-side">
+          <p class="pair-tag">✕ Don't</p>
+          <p class="pair-copy">"As a cancer patient, your comfort and confidence matter. Our cranial prosthesis with human hair integration may help restore your sense of self on your hardest treatment days."</p>
+          <p class="pair-note">"Cancer patient," "cranial prosthesis," "hardest treatment days" — medical register in a consumer context. This reads like a medical device label.</p>
+        </div>
+        <div class="do-side">
+          <p class="pair-tag">✓ Do</p>
+          <p class="pair-copy">"Bamboo-cotton lining. Adjustable inner band. Remy hair insert included. Put it on. Walk out."</p>
+          <p class="pair-note">Specific, useful, fashion-forward. The four sentences do the work. No framing required.</p>
+        </div>
+      </div>
+
+      <div class="do-dont-pair">
+        <div class="dont-side">
+          <p class="pair-tag">✕ Don't</p>
+          <p class="pair-copy">"A perfect gift for the fighter in your life who's going through treatment. Show her you support her journey with this thoughtful, meaningful gift."</p>
+          <p class="pair-note">"Fighter," "support her journey" — for gift-buyer copy, this makes the gift read as medical. The recipient is a stylish woman, not a patient.</p>
+        </div>
+        <div class="do-side">
+          <p class="pair-tag">✓ Do</p>
+          <p class="pair-copy">"A gift she'll actually wear. One hat shell, one Remy hair insert, ready to go. No assembly, no occasion required."</p>
+          <p class="pair-note">Fashion-gift register. Leads with the product benefit. No medical context in the frame.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tone by context -->
+    <p class="section-label mt-64">Tone by Context</p>
+    <div class="tone-contexts">
+      <div class="tone-context-card">
+        <p class="context-name">Product Page</p>
+        <p class="context-tone">Confident, specific, editorial</p>
+        <p class="context-example">"A structured brim with a camel interior and a deep brunette human-hair halo. The kind of hat that gets compliments in line at the coffee shop."</p>
+      </div>
+      <div class="tone-context-card">
+        <p class="context-name">First-Shed Moment Email</p>
+        <p class="context-tone">Quiet, brief, honest, practical</p>
+        <p class="context-example">"It's a lot, what's happening right now. You don't have to be okay about it. Here are the three styles our customers reach for first."</p>
+      </div>
+      <div class="tone-context-card">
+        <p class="context-name">Social</p>
+        <p class="context-tone">Specific, light, fashion-forward</p>
+        <p class="context-example">"Bamboo inside, brunette halo outside. The Cedar. Ten seconds."</p>
+      </div>
+      <div class="tone-context-card">
+        <p class="context-name">Clinic One-Pager</p>
+        <p class="context-tone">Professional, specific, hedged</p>
+        <p class="context-example">"HSA/FSA: Some patients may be eligible for partial reimbursement. Eligibility depends on individual plan terms. We recommend patients verify with their plan administrator."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     VISUAL SYSTEM
+═══════════════════════════════════════════ -->
+<section id="visual" class="section">
+  <div class="container">
+    <p class="section-label">04 — Visual System</p>
+    <h2 class="section-title">Logo, Color &amp; Typography</h2>
+
+    <!-- ── Logos ── -->
+    <p class="section-label mt-48">The Logotype System</p>
+    <p class="section-intro" style="margin-bottom:32px;">The halo mark is simultaneously a hat brim and a halo — the product mechanism and a dignity metaphor. Three variations, three colorways.</p>
+
+    <div class="logo-grid">
+      <!-- Full color on Crème -->
+      <div class="logo-cell logo-cell--light">
+        <div class="logo-cell-display">
+          <svg viewBox="0 0 400 80" xmlns="http://www.w3.org/2000/svg" width="340" height="68" role="img" aria-label="Fresh Out The Box primary logotype">
+            <defs>
+              <style>@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&amp;family=Manrope:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&amp;display=swap');</style>
+            </defs>
+            <path d="M 29.7 11.8 A 30 30 0 1 0 50.3 11.8" fill="none" stroke="#1E1510" stroke-width="2.6" stroke-linecap="round"/>
+            <line x1="88" y1="18" x2="88" y2="62" stroke="#1E1510" stroke-width="0.5" opacity="0.3"/>
+            <text x="104" y="38" font-family="'Syne','Helvetica Neue',Arial,sans-serif" font-size="19" font-weight="600" fill="#1E1510" letter-spacing="3" dominant-baseline="middle">FRESH OUT THE BOX</text>
+            <text x="105" y="56" font-family="'Manrope','Helvetica Neue',Arial,sans-serif" font-size="7.5" font-weight="300" fill="#8C7E74" letter-spacing="1.5" dominant-baseline="middle">RESTORING CONFIDENCE, ONE HAT AT A TIME</text>
+          </svg>
+        </div>
+        <p class="logo-cell-label">Primary — Full Color</p>
+      </div>
+      <!-- One-color black -->
+      <div class="logo-cell logo-cell--mid">
+        <div class="logo-cell-display">
+          <svg viewBox="0 0 400 80" xmlns="http://www.w3.org/2000/svg" width="340" height="68" role="img" aria-label="Fresh Out The Box logotype (black)">
+            <path d="M 29.7 11.8 A 30 30 0 1 0 50.3 11.8" fill="none" stroke="#000000" stroke-width="2.6" stroke-linecap="round"/>
+            <line x1="88" y1="18" x2="88" y2="62" stroke="#000" stroke-width="0.5" opacity="0.25"/>
+            <text x="104" y="38" font-family="'Syne','Helvetica Neue',Arial,sans-serif" font-size="19" font-weight="600" fill="#000000" letter-spacing="3" dominant-baseline="middle">FRESH OUT THE BOX</text>
+            <text x="105" y="56" font-family="'Manrope','Helvetica Neue',Arial,sans-serif" font-size="7.5" font-weight="300" fill="#000" letter-spacing="1.5" dominant-baseline="middle" opacity="0.5">RESTORING CONFIDENCE, ONE HAT AT A TIME</text>
+          </svg>
+        </div>
+        <p class="logo-cell-label">One-Color — Black</p>
+      </div>
+      <!-- Reverse white -->
+      <div class="logo-cell logo-cell--dark">
+        <div class="logo-cell-display">
+          <svg viewBox="0 0 400 80" xmlns="http://www.w3.org/2000/svg" width="340" height="68" role="img" aria-label="Fresh Out The Box logotype (white reverse)">
+            <path d="M 29.7 11.8 A 30 30 0 1 0 50.3 11.8" fill="none" stroke="#F5EDE3" stroke-width="2.6" stroke-linecap="round"/>
+            <line x1="88" y1="18" x2="88" y2="62" stroke="#F5EDE3" stroke-width="0.5" opacity="0.2"/>
+            <text x="104" y="38" font-family="'Syne','Helvetica Neue',Arial,sans-serif" font-size="19" font-weight="600" fill="#F5EDE3" letter-spacing="3" dominant-baseline="middle">FRESH OUT THE BOX</text>
+            <text x="105" y="56" font-family="'Manrope','Helvetica Neue',Arial,sans-serif" font-size="7.5" font-weight="300" fill="#F5EDE3" letter-spacing="1.5" dominant-baseline="middle" opacity="0.5">RESTORING CONFIDENCE, ONE HAT AT A TIME</text>
+          </svg>
+        </div>
+        <p class="logo-cell-label">One-Color — Crème Reverse</p>
+      </div>
+      <!-- Stacked full color -->
+      <div class="logo-cell logo-cell--light">
+        <div class="logo-cell-display">
+          <svg viewBox="0 0 220 130" xmlns="http://www.w3.org/2000/svg" width="160" height="95" role="img" aria-label="Fresh Out The Box stacked logotype">
+            <path d="M 99.7 13.8 A 30 30 0 1 0 120.3 13.8" fill="none" stroke="#1E1510" stroke-width="2.4" stroke-linecap="round"/>
+            <line x1="55" y1="80" x2="165" y2="80" stroke="#1E1510" stroke-width="0.5" opacity="0.2"/>
+            <text x="110" y="98" font-family="'Syne','Helvetica Neue',Arial,sans-serif" font-size="16" font-weight="600" fill="#1E1510" letter-spacing="3" text-anchor="middle" dominant-baseline="middle">FRESH OUT THE BOX</text>
+            <text x="110" y="115" font-family="'Manrope','Helvetica Neue',Arial,sans-serif" font-size="6.5" font-weight="300" fill="#8C7E74" letter-spacing="1.5" text-anchor="middle" dominant-baseline="middle">RESTORING CONFIDENCE, ONE HAT AT A TIME</text>
+          </svg>
+        </div>
+        <p class="logo-cell-label">Stacked — Full Color</p>
+      </div>
+      <!-- Mark only full color -->
+      <div class="logo-cell logo-cell--mid">
+        <div class="logo-cell-display">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="80" height="80" role="img" aria-label="Fresh Out The Box halo mark">
+            <path d="M 37.0 19.3 A 38 38 0 1 0 63.0 19.3" fill="none" stroke="#1E1510" stroke-width="2.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <p class="logo-cell-label">Halo Mark — Full Color</p>
+      </div>
+      <!-- Mark white reverse -->
+      <div class="logo-cell logo-cell--dark">
+        <div class="logo-cell-display">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="80" height="80" role="img" aria-label="Fresh Out The Box halo mark (reverse)">
+            <path d="M 37.0 19.3 A 38 38 0 1 0 63.0 19.3" fill="none" stroke="#F5EDE3" stroke-width="2.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <p class="logo-cell-label">Halo Mark — Crème Reverse</p>
+      </div>
+    </div>
+
+    <div class="clearspace-rule mt-32">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true">
+        <!-- Logo with dashed clearspace guides -->
+        <rect x="10" y="10" width="80" height="80" stroke="#B8713F" stroke-width="0.5" stroke-dasharray="3 2" fill="none"/>
+        <path d="M 37.0 19.3 A 38 38 0 1 0 63.0 19.3" stroke="#1E1510" stroke-width="2.8" stroke-linecap="round"/>
+      </svg>
+      <div class="clearspace-body">
+        <h4>Clear Space Rule</h4>
+        <p>Maintain a minimum clear space of <strong>equal to the height of the halo mark × 0.5</strong> on all sides of the logotype or mark. No other graphic elements, text, or imagery should enter this zone. Minimum digital size: 120px wide for the primary lockup; 24px for the halo mark alone. Print minimum: 1 inch wide for lockup; 0.25 inch for mark alone.</p>
+        <p class="mt-8"><strong>Production note:</strong> The SVG logos use <code>font-family</code> references. Before use in print or embedded documents, request outlined-path versions from a production designer. Text references must be converted to outlines for print production, embroidery, and laser engraving.</p>
+      </div>
+    </div>
+
+    <!-- ── Color ── -->
+    <p class="section-label mt-64">Color Palette</p>
+    <p style="font-size:14px;font-weight:300;color:var(--warm-stone);margin-bottom:28px;max-width:600px;">Warm without being soft. Editorial without being cold. If a color could appear in a hospital pamphlet, it's wrong for this brand.</p>
+
+    <div class="color-swatches">
+      <div class="swatch">
+        <div class="swatch-block" style="background:#1E1510;"></div>
+        <div class="swatch-info">
+          <p class="swatch-name">Espresso</p>
+          <p class="swatch-hex">#1E1510</p>
+          <p class="swatch-note">Logotype, headings, dark BG</p>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background:#F5EDE3;border:1px solid #E8DDD0;"></div>
+        <div class="swatch-info">
+          <p class="swatch-name">Crème</p>
+          <p class="swatch-hex">#F5EDE3</p>
+          <p class="swatch-note">Primary background — never true white</p>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background:#B8713F;"></div>
+        <div class="swatch-info">
+          <p class="swatch-name">Cognac</p>
+          <p class="swatch-hex">#B8713F</p>
+          <p class="swatch-note">Large text only on Crème</p>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background:#8B5230;"></div>
+        <div class="swatch-info">
+          <p class="swatch-name">Cognac Deep</p>
+          <p class="swatch-hex">#8B5230</p>
+          <p class="swatch-note">CTA with Crème/white text ✓</p>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background:#D4A59E;"></div>
+        <div class="swatch-info">
+          <p class="swatch-name">Blush</p>
+          <p class="swatch-hex">#D4A59E</p>
+          <p class="swatch-note">Warmth panels, Espresso text ✓</p>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background:#7A8E6E;"></div>
+        <div class="swatch-info">
+          <p class="swatch-name">Sage</p>
+          <p class="swatch-hex">#7A8E6E</p>
+          <p class="swatch-note">Badges, Espresso text ✓</p>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background:#C9B49A;"></div>
+        <div class="swatch-info">
+          <p class="swatch-name">Warm Sand</p>
+          <p class="swatch-hex">#C9B49A</p>
+          <p class="swatch-note">Dividers, mid-tone support</p>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background:#E8DDD0;border:1px solid #C9B49A;"></div>
+        <div class="swatch-info">
+          <p class="swatch-name">Parchment</p>
+          <p class="swatch-hex">#E8DDD0</p>
+          <p class="swatch-note">Card backgrounds</p>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-block" style="background:#8C7E74;"></div>
+        <div class="swatch-info">
+          <p class="swatch-name">Warm Stone</p>
+          <p class="swatch-hex">#8C7E74</p>
+          <p class="swatch-note">Captions ≥14px only</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contrast matrix -->
+    <div class="contrast-matrix mt-8">
+      <h3>Text-Safe Pairings — Computed Contrast Ratios</h3>
+      <table class="matrix-table">
+        <thead>
+          <tr>
+            <th>Text Color</th>
+            <th>Background</th>
+            <th>Ratio</th>
+            <th>Normal Text AA (4.5:1)</th>
+            <th>Large Text AA (3:1)</th>
+            <th>Use For</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="swatch-pill" style="background:#1E1510;"></span>Espresso</td>
+            <td><span class="swatch-pill" style="background:#F5EDE3;border:1px solid #ccc;"></span>Crème</td>
+            <td class="ratio-pass">16.1:1</td>
+            <td class="ratio-pass">✓ AAA</td>
+            <td class="ratio-pass">✓ AAA</td>
+            <td>All body text, headings</td>
+          </tr>
+          <tr>
+            <td><span class="swatch-pill" style="background:#2C2420;"></span>Off-Black</td>
+            <td><span class="swatch-pill" style="background:#F5EDE3;border:1px solid #ccc;"></span>Crème</td>
+            <td class="ratio-pass">13.8:1</td>
+            <td class="ratio-pass">✓ AAA</td>
+            <td class="ratio-pass">✓ AAA</td>
+            <td>Primary body copy</td>
+          </tr>
+          <tr>
+            <td><span class="swatch-pill" style="background:#F5EDE3;border:1px solid #888;"></span>Crème</td>
+            <td><span class="swatch-pill" style="background:#1E1510;"></span>Espresso</td>
+            <td class="ratio-pass">16.1:1</td>
+            <td class="ratio-pass">✓ AAA</td>
+            <td class="ratio-pass">✓ AAA</td>
+            <td>Reverse headers, dark panels</td>
+          </tr>
+          <tr>
+            <td><span class="swatch-pill" style="background:#F5EDE3;border:1px solid #888;"></span>Crème</td>
+            <td><span class="swatch-pill" style="background:#8B5230;"></span>Cognac Deep</td>
+            <td class="ratio-pass">5.97:1</td>
+            <td class="ratio-pass">✓ AA</td>
+            <td class="ratio-pass">✓ AA</td>
+            <td>CTA buttons — approved pairing</td>
+          </tr>
+          <tr>
+            <td><span class="swatch-pill" style="background:#1E1510;"></span>Espresso</td>
+            <td><span class="swatch-pill" style="background:#B8713F;"></span>Cognac</td>
+            <td class="ratio-pass">4.70:1</td>
+            <td class="ratio-pass">✓ AA</td>
+            <td class="ratio-pass">✓ AA</td>
+            <td>Text on Cognac backgrounds</td>
+          </tr>
+          <tr>
+            <td><span class="swatch-pill" style="background:#1E1510;"></span>Espresso</td>
+            <td><span class="swatch-pill" style="background:#D4A59E;"></span>Blush</td>
+            <td class="ratio-pass">8.49:1</td>
+            <td class="ratio-pass">✓ AA</td>
+            <td class="ratio-pass">✓ AA</td>
+            <td>Quote panels, warmth surfaces</td>
+          </tr>
+          <tr>
+            <td><span class="swatch-pill" style="background:#1E1510;"></span>Espresso</td>
+            <td><span class="swatch-pill" style="background:#7A8E6E;"></span>Sage</td>
+            <td class="ratio-pass">5.29:1</td>
+            <td class="ratio-pass">✓ AA</td>
+            <td class="ratio-pass">✓ AA</td>
+            <td>Badges, status labels</td>
+          </tr>
+          <tr>
+            <td><span class="swatch-pill" style="background:#B8713F;"></span>Cognac</td>
+            <td><span class="swatch-pill" style="background:#F5EDE3;border:1px solid #ccc;"></span>Crème</td>
+            <td class="ratio-warn">3.42:1</td>
+            <td class="ratio-fail">✗ Fails</td>
+            <td class="ratio-pass">✓ AA</td>
+            <td>Large decorative text only (≥24px)</td>
+          </tr>
+          <tr>
+            <td><span class="swatch-pill" style="background:#8C7E74;"></span>Warm Stone</td>
+            <td><span class="swatch-pill" style="background:#F5EDE3;border:1px solid #ccc;"></span>Crème</td>
+            <td class="ratio-warn">3.32:1</td>
+            <td class="ratio-fail">✗ Fails</td>
+            <td class="ratio-pass">✓ AA</td>
+            <td>Large captions only; use Off-Black for &lt;18px</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ── Typography ── -->
+    <p class="section-label mt-64">Typography</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:40px;">
+      <div style="background:var(--parchment);padding:28px 24px;">
+        <p style="font-size:9px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--cognac);margin-bottom:8px;">Display / Editorial</p>
+        <p style="font-family:var(--font-display);font-size:28px;font-weight:700;color:var(--espresso);line-height:1.1;margin-bottom:4px;">Syne</p>
+        <p style="font-family:var(--font-body);font-size:18px;font-style:italic;font-weight:400;color:var(--warm-stone);margin-bottom:16px;">Contemporary, geometric, fashion-forward</p>
+        <p style="font-size:12px;font-weight:300;color:var(--warm-stone);line-height:1.6;">Google Fonts. Use at H1–H3, product names, logotype, kickers, nav. Geometric display sans — Acne Studios / Toteme register. Weights 400–800. No italic; use Manrope italic for pull quotes.</p>
+      </div>
+      <div style="background:var(--parchment);padding:28px 24px;">
+        <p style="font-size:9px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--cognac);margin-bottom:8px;">Body / UI</p>
+        <p style="font-family:var(--font-body);font-size:28px;font-weight:400;color:var(--espresso);line-height:1.1;margin-bottom:4px;">Manrope</p>
+        <p style="font-family:var(--font-body);font-size:16px;font-weight:300;color:var(--warm-stone);margin-bottom:16px;">Clear, warm, legible at every weight</p>
+        <p style="font-size:12px;font-weight:300;color:var(--warm-stone);line-height:1.6;">Google Fonts. Use for all body copy, UI labels, CTAs, metadata, and italic emphasis. Humanist geometry with genuine italic — accessible at small sizes, important for a 40–65 primary audience that may experience treatment-related visual fatigue.</p>
+      </div>
+    </div>
+
+    <div class="type-specimens">
+      <div class="type-specimen">
+        <div class="type-meta">
+          <span class="type-level">Display</span>
+          <span class="type-spec">Syne 700 · 64–72px · lh 1.05</span>
+        </div>
+        <p style="font-family:var(--font-display);font-size:clamp(40px,5vw,64px);font-weight:600;line-height:1.05;color:var(--espresso);">Feel like yourself again.</p>
+      </div>
+      <div class="type-specimen">
+        <div class="type-meta">
+          <span class="type-level">H1</span>
+          <span class="type-spec">Syne 700 · 48px · lh 1.1</span>
+        </div>
+        <p style="font-family:var(--font-display);font-size:clamp(28px,3.5vw,48px);font-weight:600;line-height:1.1;color:var(--espresso);">The hat. The hair. The you.</p>
+      </div>
+      <div class="type-specimen">
+        <div class="type-meta">
+          <span class="type-level">H2</span>
+          <span class="type-spec">Syne 600 · 36px · lh 1.15</span>
+        </div>
+        <p style="font-family:var(--font-display);font-size:clamp(22px,2.5vw,36px);font-weight:600;line-height:1.15;color:var(--espresso);">Bamboo inside. Brunette outside.</p>
+      </div>
+      <div class="type-specimen">
+        <div class="type-meta">
+          <span class="type-level">Quote</span>
+          <span class="type-spec">Manrope 400 italic · 24–28px · lh 1.4</span>
+        </div>
+        <p style="font-family:var(--font-body);font-size:clamp(18px,2vw,26px);font-weight:400;font-style:italic;line-height:1.4;color:var(--espresso);">"I forgot I was wearing it. That's the whole point."</p>
+      </div>
+      <div class="type-specimen">
+        <div class="type-meta">
+          <span class="type-level">Body Large</span>
+          <span class="type-spec">Manrope 300 · 18px · lh 1.7</span>
+        </div>
+        <p style="font-family:var(--font-body);font-size:18px;font-weight:300;line-height:1.7;color:var(--off-black);">Put it on. Walk out. No pins, no clips, no steps. Real Remy hair, adjustable fit, bamboo-cotton lining. That's the whole spec.</p>
+      </div>
+      <div class="type-specimen">
+        <div class="type-meta">
+          <span class="type-level">Body</span>
+          <span class="type-spec">Manrope 400 · 16px · lh 1.65</span>
+        </div>
+        <p style="font-family:var(--font-body);font-size:16px;font-weight:400;line-height:1.65;color:var(--off-black);">The bamboo-cotton interior lining is temperature-regulating and hypoallergenic. The adjustable inner band accommodates head circumference changes. Ships pre-assembled and ready to wear.</p>
+      </div>
+      <div class="type-specimen">
+        <div class="type-meta">
+          <span class="type-level">Label</span>
+          <span class="type-spec">Manrope 600 · 12px · ls 0.08em · CAPS</span>
+        </div>
+        <p style="font-family:var(--font-body);font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--espresso);">REMY HUMAN HAIR · ADJUSTABLE FIT · HSA/FSA MAY BE ELIGIBLE</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     PHOTOGRAPHY
+═══════════════════════════════════════════ -->
+<section id="photography" class="section section--parchment">
+  <div class="container">
+    <p class="section-label">05 — Photography</p>
+    <h2 class="section-title">Art Direction</h2>
+    <p class="section-intro">No stock imagery. These are shot briefs. The test for every image: would a woman without hair loss see it and consider buying from this brand?</p>
+
+    <div class="photo-direction-grid" style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:48px;">
+      <div class="photo-direction-item" style="display:flex;flex-direction:column;gap:8px;">
+        <div style="aspect-ratio:2/3;overflow:hidden;background:var(--parchment);">
+          <img src="../03-visual-identity/photography/gen-01-jeweled-cap-portrait.png" alt="Editorial direction: jeweled baseball cap portrait" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <p style="font-size:9px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--cognac-deep);margin:0;">Embellished Cap</p>
+        <p style="font-size:11px;font-weight:300;color:var(--espresso);line-height:1.5;margin:0;">Jeweled detail, Black woman, gold earrings — glamour-forward editorial portrait</p>
+      </div>
+      <div class="photo-direction-item" style="display:flex;flex-direction:column;gap:8px;">
+        <div style="aspect-ratio:2/3;overflow:hidden;background:var(--parchment);">
+          <img src="../03-visual-identity/photography/gen-02-fedora-editorial.png" alt="Editorial direction: cognac fedora portrait" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <p style="font-size:9px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--cognac-deep);margin:0;">Wide-Brim Fedora</p>
+        <p style="font-size:11px;font-weight:300;color:var(--espresso);line-height:1.5;margin:0;">Cognac felt, black coat, warm neutral background — aspirational editorial</p>
+      </div>
+      <div class="photo-direction-item" style="display:flex;flex-direction:column;gap:8px;">
+        <div style="aspect-ratio:2/3;overflow:hidden;background:var(--parchment);">
+          <img src="../03-visual-identity/photography/gen-03-captain-cap-editorial.png" alt="Editorial direction: structured cap portrait" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <p style="font-size:9px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--cognac-deep);margin:0;">Structured Cap</p>
+        <p style="font-size:11px;font-weight:300;color:var(--espresso);line-height:1.5;margin:0;">Satin finish, crystal detail, neutral background — contemporary fashion editorial</p>
+      </div>
+      <div class="photo-direction-item" style="display:flex;flex-direction:column;gap:8px;">
+        <div style="aspect-ratio:2/3;overflow:hidden;background:var(--parchment);">
+          <img src="../03-visual-identity/photography/gen-04-baseball-cap-streetwear.png" alt="Editorial direction: streetwear baseball cap" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <p style="font-size:9px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--cognac-deep);margin:0;">Baseball Cap</p>
+        <p style="font-size:11px;font-weight:300;color:var(--espresso);line-height:1.5;margin:0;">Statement sunglasses, bold outfit — street style confidence, fashion-forward energy</p>
+      </div>
+      <div class="photo-direction-item" style="display:flex;flex-direction:column;gap:8px;">
+        <div style="aspect-ratio:2/3;overflow:hidden;background:var(--parchment);">
+          <img src="../03-visual-identity/photography/gen-05-lace-fedora-editorial.png" alt="Editorial direction: lace fedora portrait" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <p style="font-size:9px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--cognac-deep);margin:0;">Lace Fedora</p>
+        <p style="font-size:11px;font-weight:300;color:var(--espresso);line-height:1.5;margin:0;">Black lace, gold hoops, espresso background — moody sophisticated editorial</p>
+      </div>
+    </div>
+    <p style="font-size:10px;font-weight:300;color:var(--warm-stone);letter-spacing:0.04em;margin-bottom:40px;margin-top:-32px;">Direction references generated from mood board imagery. Final photography must meet all representation requirements below.</p>
+
+    <div class="rep-requirement">
+      <h3>Representation — Non-Negotiable, Structural</h3>
+      <p>These requirements must be met across any set of six or more images. Not once across the whole site — structurally, every content cycle. Representation is a stated brand pillar, not a marketing decision.</p>
+      <div class="rep-items">
+        <div class="rep-item">
+          <p class="rep-item-label">Skin Tones</p>
+          <p class="rep-item-desc">Full Fitzpatrick scale. Fitzpatrick V–VI must appear in hero/editorial contexts, not only in "diversity" callouts.</p>
+        </div>
+        <div class="rep-item">
+          <p class="rep-item-label">Hair Textures</p>
+          <p class="rep-item-desc">Every texture the product offers — straight, wavy, coily/4A–4C — must appear in premium placement. Coily inserts are not secondary.</p>
+        </div>
+        <div class="rep-item">
+          <p class="rep-item-label">Ages</p>
+          <p class="rep-item-desc">The 40–65 demographic is the majority in editorial imagery. Women in their 50s and 60s in confidence-forward (not nostalgic soft-focus) contexts.</p>
+        </div>
+        <div class="rep-item">
+          <p class="rep-item-label">Treatment Stage</p>
+          <p class="rep-item-desc">At least 30% of lifestyle imagery includes women evidently in treatment — in normal, stylish contexts. Not in hospitals. Not in vulnerable framings.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="photo-briefs">
+      <div class="photo-brief-card">
+        <p class="brief-number">01</p>
+        <p class="brief-title">The Getting-Dressed Portrait</p>
+        <p class="brief-subtitle">At Her Mirror · Morning Window Light</p>
+        <p class="brief-desc">A woman putting on or having just put on a FOTB hat. Expression: neutral moving toward satisfaction — not a performed smile. Lived-in environment — her actual bedroom or bathroom. Fashion-forward wardrobe. The hat is part of the outfit, not the frame's subject. Specific rep: one late-50s woman, Dark Brown skin, coily-texture halo; one 40s woman, South Asian complexion, wavy insert; one 60s woman, silver insert, visible post-treatment features.</p>
+      </div>
+      <div class="photo-brief-card">
+        <p class="brief-number">02</p>
+        <p class="brief-title">Out in the World</p>
+        <p class="brief-subtitle">In Motion · Real-World Light</p>
+        <p class="brief-desc">A woman going about a normal moment. Walking out of a building. Getting coffee. In a meeting. At a restaurant mid-conversation. She is present, not posing. The hat is incidental. The context is the story — not her hair. Key shot: two women at a café table, talking about anything, one wearing FOTB. The connection is foreground; the hat is background.</p>
+      </div>
+      <div class="photo-brief-card">
+        <p class="brief-number">03</p>
+        <p class="brief-title">Detail &amp; Material</p>
+        <p class="brief-subtitle">Close-Up · Soft Directional Light</p>
+        <p class="brief-desc">The bamboo-cotton lining. The Remy hair texture. The halo-insert mechanism. The adjustable band. Shot on warm stone or linen surfaces — not white sweep, not medical-blank backgrounds. Long shadows for dimension. The product should look crafted and fashion-adjacent. Color: Cognac/Espresso/Warm Sand range of the product against complementary warm surfaces.</p>
+      </div>
+      <div class="photo-brief-card">
+        <p class="brief-number">04</p>
+        <p class="brief-title">The Unboxing</p>
+        <p class="brief-subtitle">Warm Daylight · Table by a Window</p>
+        <p class="brief-desc">The box opening moment. Hands on tissue paper. Inside lid copy visible. Hat revealed in branded tissue. Not Instagrambait-first — the unboxing should feel good to the person doing it. Real hands (manicure optional). Shot sequence: box closed → lid lifting → inside lid visible → tissue seal → hat revealed → insert card in hand.</p>
+      </div>
+    </div>
+
+    <div class="mt-32" style="background:var(--espresso);padding:24px 28px;">
+      <p style="font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--cognac);margin-bottom:14px;">What Never Appears in Brand Photography</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+        <div>
+          <p style="font-size:12px;font-weight:300;color:rgba(245,237,227,0.6);line-height:1.65;">Hospital rooms, treatment centers, IV poles, medical equipment</p>
+        </div>
+        <div>
+          <p style="font-size:12px;font-weight:300;color:rgba(245,237,227,0.6);line-height:1.65;">Pink ribbons; pink as a dominant color in any context</p>
+        </div>
+        <div>
+          <p style="font-size:12px;font-weight:300;color:rgba(245,237,227,0.6);line-height:1.65;">Crying, expressions of despair, vulnerability framings</p>
+        </div>
+        <div>
+          <p style="font-size:12px;font-weight:300;color:rgba(245,237,227,0.6);line-height:1.65;">Before/after framing — the "before" (bare head) does not exist in our visual universe</p>
+        </div>
+        <div>
+          <p style="font-size:12px;font-weight:300;color:rgba(245,237,227,0.6);line-height:1.65;">Soft-focus or dreamy processing applied to older women — implies frailty</p>
+        </div>
+        <div>
+          <p style="font-size:12px;font-weight:300;color:rgba(245,237,227,0.6);line-height:1.65;">Inspirational-poster staging: backlit silhouettes, arms outstretched, dramatic skies</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SENSITIVITY & COMPLIANCE
+═══════════════════════════════════════════ -->
+<section id="compliance" class="compliance-section">
+  <div class="compliance-header">
+    <div style="max-width:var(--max-width);margin:0 auto;">
+      <p style="font-size:9px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--cognac);margin-bottom:12px;">06 — Sensitivity &amp; Compliance</p>
+      <h2>The Non-Negotiables</h2>
+      <p>This category punishes tone-deafness. These guardrails are not style suggestions — they are ethical requirements. Violating them does not just look bad; it harms real people in real moments.</p>
+    </div>
+  </div>
+  <div class="compliance-body">
+
+    <div class="compliance-block">
+      <h3>Banned Language — Never Use</h3>
+      <ul>
+        <li>Battle / fight / fought — war metaphors for illness position those who die as having "lost"</li>
+        <li>Warrior — borrows from that same frame, now recognized as hollow</li>
+        <li>Survivor / survivor journey — hers to use about herself, not ours to use about her</li>
+        <li>Brave / bravery / courageous — dealing with illness is a circumstance, not a character achievement</li>
+        <li>You've got this / Stay strong — cheerleader register; not who this brand is</li>
+        <li>Everything happens for a reason — toxic positivity; always inappropriate</li>
+        <li>Feel beautiful — implies she currently doesn't; also positions beauty as the goal, not selfhood</li>
+        <li>Crown / mane / glory — positions hair as defining worth; if hair is her crown, losing it is losing her crown</li>
+        <li>Patient (in consumer copy) — she is a woman, a customer, a person getting dressed</li>
+        <li>Cranial prosthesis (in consumer copy) — insurance/HSA documentation only</li>
+      </ul>
+    </div>
+
+    <div class="compliance-block">
+      <h3>Reimbursement Language — Always Hedge</h3>
+      <p>Fresh Out The Box is not a medical device and carries no medical indication. HSA/FSA reimbursement eligibility is plan-specific and cannot be promised.</p>
+      <p><strong>Approved language:</strong> "May be eligible for HSA/FSA reimbursement. Eligibility depends on individual plan terms — verify with your plan administrator."</p>
+      <p><strong>Never say:</strong> "HSA-eligible," "FSA-approved," "covered by HSA/FSA," or any language implying guaranteed reimbursement.</p>
+      <p class="note">In clinic materials, add: "We provide itemized receipts on request to support reimbursement claims." In consumer contexts, the hedge should be present but not the lead.</p>
+    </div>
+
+    <div class="compliance-block">
+      <h3>Representation Commitment</h3>
+      <p>Every coily/curly hair texture variant must appear in premium placements — hero imagery, editorial, featured product shots — not only in a "diversity" section. One-color treatment (photography grade, lighting) must be consistent across all subjects. Do not grade differently by skin tone.</p>
+      <p>In copy: the audience is not "women affected by hair loss" (medical frame). She is a woman who wears hats.</p>
+      <p class="note">This is a stated brand pillar, not a marketing decision. Failure here damages the brand's core credibility with its primary audience.</p>
+    </div>
+
+    <div class="compliance-block">
+      <h3>Medical Claims — What We Don't Say</h3>
+      <ul>
+        <li>"Therapeutic" — not a therapeutic device; this is a medical claim</li>
+        <li>"Reduces anxiety / distress" — a psychological claim requiring clinical evidence</li>
+        <li>"Helps with scalp healing" — a medical claim</li>
+        <li>"Recommended by oncologists / dermatologists" unless specific, verified, and used with permission</li>
+        <li>Any language that implies the product treats or manages a medical condition</li>
+      </ul>
+      <p class="note">We can say: "designed with scalp sensitivity in mind," "bamboo-cotton lining," "adjustable fit for treatment-related head circumference changes." These are material claims, not medical ones.</p>
+    </div>
+
+    <div class="compliance-block">
+      <h3>Pity Language &amp; Tone</h3>
+      <ul>
+        <li>"Going through so much / so hard" — centers our awareness of her suffering</li>
+        <li>"You deserve this" — implies she normally doesn't</li>
+        <li>"Loved ones" — vague; if addressing gift buyers, name the relationship</li>
+        <li>"Show your support" — positions the gift as an acknowledgment of illness, not a fashion gift</li>
+        <li>"On your hardest days" — marks every interaction with the difficulty we're trying not to make central</li>
+      </ul>
+    </div>
+
+    <div class="compliance-block">
+      <h3>Copy Review Checklist</h3>
+      <ul>
+        <li>Would a nurse write this? (If yes → rewrite)</li>
+        <li>Could this appear in a hospital pamphlet? (If yes → rewrite)</li>
+        <li>Does it treat the reader as needing uplift? (If yes → rewrite)</li>
+        <li>Does it mention strength, bravery, or a journey? (If yes → rewrite)</li>
+        <li>Does the product sound medical or therapeutic? (If yes → rewrite)</li>
+        <li>Would a woman without hair loss buy this product from this copy? (If no → consider whether fashion framing is strong enough)</li>
+        <li>Is HSA/FSA language fully hedged? (If not → add the hedge)</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer-brand">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true">
+      <path d="M 37.0 19.3 A 38 38 0 1 0 63.0 19.3" stroke="#F5EDE3" stroke-width="3.5" stroke-linecap="round"/>
+    </svg>
+    <p class="footer-wordmark">FRESH OUT THE BOX</p>
+    <p class="footer-tagline">Restoring confidence, one hat at a time.</p>
+    <p style="font-size:10px;font-weight:300;color:rgba(245,237,227,0.25);margin-top:4px;">Brand Guidelines v1.0 · freshoutthebox.com</p>
+  </div>
+  <div class="footer-index">
+    <h4>In This Kit</h4>
+    <ul>
+      <li>01-strategy / brand-platform.md</li>
+      <li>01-strategy / audience-personas.md</li>
+      <li>01-strategy / messaging-architecture.md</li>
+      <li>02-verbal-identity / voice-and-tone.md</li>
+      <li>02-verbal-identity / copy-bank.md</li>
+      <li>02-verbal-identity / lexicon.md</li>
+      <li>03-visual-identity / logos/ (9 SVG files)</li>
+      <li>03-visual-identity / color/ palette.md + swatches.svg</li>
+      <li>03-visual-identity / typography/ type-system.md</li>
+      <li>03-visual-identity / photography-art-direction.md</li>
+      <li>03-visual-identity / iconography/ (10 SVG icons)</li>
+      <li>04-applications / packaging-direction.md</li>
+      <li>04-applications / social-templates/ (3 HTML)</li>
+      <li>04-applications / email-header.svg</li>
+      <li>04-applications / clinic-one-pager.html</li>
+      <li><a href="index.html">05-guidelines / index.html</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>
