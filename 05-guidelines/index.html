@@ -1234,6 +1234,236 @@ html[data-theme="dark"] [style*="color:var(--espresso)"],
 html[data-theme="dark"] [style*="color: var(--espresso)"] {
   color: var(--parchment) !important;
 }
+
+/* ═══════════════════════════════════════════
+   NAV RIGHT WRAPPER
+═══════════════════════════════════════════ */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* ═══════════════════════════════════════════
+   HAMBURGER BUTTON
+═══════════════════════════════════════════ */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  min-height: 44px;
+  min-width: 44px;
+  flex-shrink: 0;
+}
+.nav-toggle-bar {
+  display: block;
+  width: 20px;
+  height: 1.5px;
+  background: rgba(245,237,227,0.65);
+  border-radius: 1px;
+  transition: transform 0.22s ease, opacity 0.22s ease;
+}
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+.nav-toggle:focus-visible {
+  outline: 2px solid var(--cognac);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ═══════════════════════════════════════════
+   MOBILE MENU DRAWER
+═══════════════════════════════════════════ */
+.mobile-menu {
+  position: fixed;
+  top: 56px; left: 0; right: 0; bottom: 0;
+  background: var(--espresso);
+  z-index: 98;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 24px 80px;
+  transform: translateX(-100%);
+  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  visibility: hidden;
+}
+.mobile-menu.is-open {
+  transform: translateX(0);
+  visibility: visible;
+}
+.mobile-menu-links {
+  list-style: none;
+}
+.mobile-menu-links a {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(22px, 7vw, 30px);
+  font-weight: 600;
+  color: rgba(245,237,227,0.55);
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(245,237,227,0.08);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  transition: color var(--transition);
+}
+.mobile-menu-links li:first-child a {
+  border-top: 1px solid rgba(245,237,227,0.08);
+}
+.mobile-menu-links a:hover { color: var(--creme); }
+.mobile-menu-links a:focus-visible {
+  color: var(--creme);
+  outline: 2px solid var(--cognac);
+  outline-offset: 4px;
+  border-radius: 2px;
+  text-decoration: none;
+}
+.mobile-menu-foot {
+  margin-top: 40px;
+  font-size: 10px;
+  font-weight: 300;
+  color: rgba(245,237,227,0.2);
+  letter-spacing: 0.06em;
+  line-height: 1.6;
+}
+html[data-theme="dark"] .mobile-menu { background: #0F0B08; }
+
+/* ═══════════════════════════════════════════
+   PHOTOGRAPHY GRIDS (replace inline styles)
+═══════════════════════════════════════════ */
+.photo-direction-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-bottom: 48px;
+}
+.never-appears-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE — 900px
+═══════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .nav-links { gap: 16px; }
+  .nav-links a { font-size: 9px; letter-spacing: 0.1em; }
+  .container  { padding: 0 28px; }
+  .nav-inner  { padding: 0 28px; }
+  .nav-right  { gap: 16px; }
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE — 768px (mobile breakpoint)
+═══════════════════════════════════════════ */
+@media (max-width: 768px) {
+  /* Nav */
+  .nav-links          { display: none; }
+  .nav-toggle         { display: flex; }
+  .nav-inner          { padding: 0 16px; }
+  .nav-right          { gap: 4px; }
+  .theme-toggle .t-label { display: none; }
+  .theme-toggle       { padding: 5px 10px; gap: 0; }
+
+  /* Container + section */
+  .container { padding: 0 20px; }
+  .section   { padding: 56px 0; }
+
+  /* Hero */
+  .hero { min-height: 100svh; }
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding: 48px 20px 56px;
+  }
+  .hero-mark            { justify-content: flex-start; }
+  .hero-mark svg        { width: min(140px, 45%); }
+
+  /* Brand story */
+  .story-grid { grid-template-columns: 1fr; gap: 28px; }
+
+  /* Platform + values */
+  .platform-grid { grid-template-columns: 1fr; }
+  .values-grid   { grid-template-columns: repeat(2, 1fr); }
+
+  /* Personality sliders */
+  .sliders      { margin-top: 32px; max-width: 100%; }
+  .slider-row   {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .slider-label-left  { text-align: left; }
+  .slider-label-right { font-size: 10px; }
+
+  /* Voice */
+  .voice-principles { grid-template-columns: repeat(2, 1fr); }
+
+  /* Do / Don't */
+  .do-dont-pair { grid-template-columns: 1fr; }
+
+  /* Tone contexts */
+  .tone-contexts { grid-template-columns: 1fr; }
+
+  /* Type specimen */
+  .type-specimen { grid-template-columns: 1fr; gap: 6px; }
+  .type-meta     { padding-top: 0; }
+
+  /* Logo grid + clearspace */
+  .logo-grid       { grid-template-columns: 1fr; }
+  .clearspace-rule { grid-template-columns: 1fr; }
+
+  /* Color swatches */
+  .color-swatches { grid-template-columns: repeat(2, 1fr); }
+
+  /* Photography */
+  .photo-direction-grid { grid-template-columns: repeat(2, 1fr); }
+  .rep-items            { grid-template-columns: repeat(2, 1fr); }
+  .photo-briefs         { grid-template-columns: 1fr; }
+  .never-appears-grid   { grid-template-columns: 1fr; }
+
+  /* Compliance */
+  .compliance-header { padding: 32px 20px; }
+  .compliance-body   { grid-template-columns: 1fr; padding: 32px 20px; }
+
+  /* Footer */
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 20px;
+    gap: 28px;
+  }
+  .footer-index { text-align: left; }
+
+  /* Contrast matrix */
+  .contrast-matrix { padding: 24px 16px; }
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE — 480px (small phones)
+═══════════════════════════════════════════ */
+@media (max-width: 480px) {
+  .section       { padding: 44px 0; }
+  .section-intro { font-size: 16px; margin-bottom: 32px; }
+  .values-grid      { grid-template-columns: 1fr; }
+  .voice-principles { grid-template-columns: 1fr; }
+  .color-swatches   { grid-template-columns: 1fr; }
+  .rep-items        { grid-template-columns: 1fr; }
+  .photo-direction-grid { grid-template-columns: repeat(2, 1fr); }
+}
 </style>
 <script>
   (function(){
@@ -1257,6 +1487,7 @@ html[data-theme="dark"] [style*="color: var(--espresso)"] {
       </svg>
       <span class="nav-wordmark">FRESH OUT THE BOX</span>
     </a>
+    <div class="nav-right">
     <ul class="nav-links" role="list">
       <li><a href="#story">Story</a></li>
       <li><a href="#platform">Platform</a></li>
@@ -1284,8 +1515,29 @@ html[data-theme="dark"] [style*="color: var(--espresso)"] {
       </svg>
       <span class="t-label">Dark</span>
     </button>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu" type="button">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+    </div>
   </div>
 </nav>
+
+<!-- ═══════════════════════════════════════════
+     MOBILE MENU DRAWER
+═══════════════════════════════════════════ -->
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Navigation menu" aria-modal="true">
+  <ul class="mobile-menu-links">
+    <li><a href="#story">01 — Story</a></li>
+    <li><a href="#platform">02 — Platform</a></li>
+    <li><a href="#voice">03 — Voice</a></li>
+    <li><a href="#visual">04 — Visual Identity</a></li>
+    <li><a href="#photography">05 — Photography</a></li>
+    <li><a href="#compliance">06 — Compliance</a></li>
+  </ul>
+  <p class="mobile-menu-foot">Fresh Out The Box — Brand Guidelines v1.0</p>
+</div>
 
 <!-- ═══════════════════════════════════════════
      HERO
@@ -1906,7 +2158,7 @@ html[data-theme="dark"] [style*="color: var(--espresso)"] {
     <h2 class="section-title">Art Direction</h2>
     <p class="section-intro">No stock imagery. These are shot briefs. The test for every image: would a woman without hair loss see it and consider buying from this brand?</p>
 
-    <div class="photo-direction-grid" style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:48px;">
+    <div class="photo-direction-grid">
       <div class="photo-direction-item" style="display:flex;flex-direction:column;gap:8px;">
         <div style="aspect-ratio:2/3;overflow:hidden;background:var(--parchment);">
           <img src="../03-visual-identity/photography/gen-01-jeweled-cap-portrait.png" alt="Editorial direction: jeweled baseball cap portrait" style="width:100%;height:100%;object-fit:cover;">
@@ -1997,7 +2249,7 @@ html[data-theme="dark"] [style*="color: var(--espresso)"] {
 
     <div class="mt-32" style="background:var(--espresso);padding:24px 28px;">
       <p style="font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--cognac);margin-bottom:14px;">What Never Appears in Brand Photography</p>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+      <div class="never-appears-grid">
         <div>
           <p style="font-size:12px;font-weight:300;color:rgba(245,237,227,0.6);line-height:1.65;">Hospital rooms, treatment centers, IV poles, medical equipment</p>
         </div>
@@ -2147,11 +2399,10 @@ html[data-theme="dark"] [style*="color: var(--espresso)"] {
 
   function apply(theme) {
     html.setAttribute('data-theme', theme);
-    lbl.textContent = theme === 'dark' ? 'Light' : 'Dark';
+    if (lbl) lbl.textContent = theme === 'dark' ? 'Light' : 'Dark';
     btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
   }
 
-  // Apply saved preference (already set in head, just sync label)
   var saved = localStorage.getItem('fotb-theme') || 'light';
   apply(saved);
 
@@ -2159,6 +2410,39 @@ html[data-theme="dark"] [style*="color: var(--espresso)"] {
     var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
     localStorage.setItem('fotb-theme', next);
     apply(next);
+  });
+
+  // ── Mobile menu ──────────────────────────────
+  var toggle = document.getElementById('nav-toggle');
+  var menu   = document.getElementById('mobile-menu');
+  if (!toggle || !menu) return;
+
+  function openMenu() {
+    menu.classList.add('is-open');
+    toggle.setAttribute('aria-expanded', 'true');
+    toggle.setAttribute('aria-label', 'Close navigation menu');
+    document.body.style.overflow = 'hidden';
+    menu.querySelector('a').focus();
+  }
+
+  function closeMenu() {
+    menu.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Open navigation menu');
+    document.body.style.overflow = '';
+    toggle.focus();
+  }
+
+  toggle.addEventListener('click', function() {
+    menu.classList.contains('is-open') ? closeMenu() : openMenu();
+  });
+
+  menu.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', closeMenu);
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && menu.classList.contains('is-open')) closeMenu();
   });
 })();
 </script>
